@@ -1,0 +1,17 @@
+<?php
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Beauty\JsonRPC\Responses\RpcResponse;
+use Beauty\JsonRPC\RpcMethod;
+use Psr\Http\Message\ResponseInterface;
+
+class {{ class }}
+{
+    #[RpcMethod('test.test')]
+    public function method(string $test = '', string|int|null $id = null): ResponseInterface
+    {
+        return new RpcResponse([], id: $id);
+    }
+}
